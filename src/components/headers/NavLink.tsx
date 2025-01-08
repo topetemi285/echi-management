@@ -19,7 +19,6 @@ const NavLinkss: React.FC<Mobile> = ({ isMobile }) => {
         label="Home"
         style={{ textDecoration: "none", color: "black" }}
       />
-
       <NavLink
         href="#about"
         label="About"

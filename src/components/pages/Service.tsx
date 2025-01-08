@@ -34,10 +34,9 @@ function ServicePage() {
         >
           <Title
             style={{
-              //   color: "#1b065d",
               fontSize: isMobile ? "2rem" : "2.5rem",
               fontWeight: "bold",
-              paddingLeft: isMobile ? "5rem" : "10rem",
+              paddingLeft: isMobile ? "3rem" : "6rem",
             }}
           >
             We Offer Different Services To Improve Your Health
@@ -57,8 +56,8 @@ function ServicePage() {
               style={{
                 color: "#A9A9A9",
                 marginTop: "1rem",
-                fontSize: "14px",
-                fontWeight: isMobile ? "lighter" : "bolder",
+                fontSize: "16px",
+                fontWeight: isMobile ? "bold" : "bolder",
                 paddingLeft: isMobile ? "3rem" : "0.5rem",
               }}
             >
@@ -87,7 +86,7 @@ function ServicePage() {
             <div>
               <p
                 style={{
-                  paddingLeft: isMobile ? "6rem" : "0rem",
+                  paddingLeft: isMobile ? "5rem" : "0rem",
                   paddingRight: isMobile ? "5rem" : "0rem",
                 }}
               >
@@ -100,7 +99,7 @@ function ServicePage() {
               <div className="mt-5 flex items-start justify-start gap-1 ">
                 <ul
                   style={{
-                    paddingLeft: isMobile ? "6rem" : "0rem",
+                    paddingLeft: isMobile ? "5rem" : "0rem",
                   }}
                 >
                   <Text>Maecenas vitae luctus nibh.</Text>
@@ -110,7 +109,7 @@ function ServicePage() {
                 </ul>
                 <ul
                   style={{
-                    paddingLeft: isMobile ? "6rem" : "0rem",
+                    paddingLeft: isMobile ? "1rem" : "0rem",
                   }}
                 >
                   <Text>Maecenas vitae luctus nibh.</Text>
@@ -123,8 +122,8 @@ function ServicePage() {
             <div>
               <div>
                 <iframe
-                  width="600"
-                  height="300"
+                  width={isMobile ? "400" : "600"}
+                  height={isMobile ? "200" : "300"}
                   src="https://www.youtube.com/embed/74DWwSxsVSs"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 ></iframe>
@@ -147,7 +146,7 @@ function ServicePage() {
               //   color: "#1b065d",
               fontSize: isMobile ? "2rem" : "2.5rem",
               fontWeight: "bold",
-              paddingLeft: isMobile ? "5rem" : "10rem",
+              paddingLeft: isMobile ? "1rem" : "10rem",
             }}
           >
             We Offer Different Services To Improve Your Health
@@ -167,9 +166,9 @@ function ServicePage() {
               style={{
                 color: "#A9A9A9",
                 marginTop: "1rem",
-                fontSize: "14px",
-                fontWeight: isMobile ? "lighter" : "bolder",
-                paddingLeft: isMobile ? "3rem" : "0.5rem",
+                fontSize: "16px",
+                fontWeight: isMobile ? "bold" : "bolder",
+                paddingLeft: isMobile ? "1rem" : "0.5rem",
               }}
             >
               ECHI in an effort to provoide affordable and accessible health
@@ -177,7 +176,7 @@ function ServicePage() {
             </Text>
           </div>
 
-          <div className="mx-10  grid grid-cols-1 items-start justify-start gap-8 md:grid-cols-2 lg:grid-cols-3 ">
+          <div className="mx-2 grid grid-cols-1 items-start justify-start gap-8 md:grid-cols-2 lg:grid-cols-3 ">
             {SERVICES.map((service) => (
               <div
                 key={service.id}
@@ -189,8 +188,8 @@ function ServicePage() {
                     alt={service.title}
                     // width={150}
                     // height={150}
-                    className="h-20 w-20"
-                    fit="contain"
+                    className="h-14 w-40"
+                    // fit="contain"
                   />
                 </div>
                 <div className="flex flex-col items-start justify-start gap-4">
@@ -207,7 +206,7 @@ function ServicePage() {
                     style={{
                       color: "#A9A9A9",
                       fontSize: "14px",
-                      fontWeight: "lighter",
+                      fontWeight: "bold",
                     }}
                   >
                     {service.description}

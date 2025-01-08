@@ -21,7 +21,7 @@ function NavBar() {
   const isMobile = useMediaQuery("(max-width: 768px)");
   return (
     <Paper
-      shadow="xs"
+      // shadow="xs"
       //   p="xl"
       style={{
         padding: "5px",
@@ -51,11 +51,11 @@ function NavBar() {
           >
             <Image
               src="/ecwaLogo.jpg"
-              height={isMobile ? 25 : 180}
-              width={isMobile ? 25 : 180}
-              alt="Pet Friend"
+              height={isMobile ? 100 : 200}
+              width={isMobile ? 100 : 200}
+              alt="echi"
               //fit="contain"
-              style={{ paddingRight: isMobile ? "0" : "100px" }}
+              style={{ paddingRight: isMobile ? "10px" : "100px" }}
             />
           </Box>
 
@@ -65,6 +65,7 @@ function NavBar() {
               onClick={() => setOpened((o) => !o)}
               lineSize={4}
               color="#343a40"
+              className="pt-5 pr-28 mr-10"
             />
           ) : (
             <Group
@@ -85,7 +86,7 @@ function NavBar() {
                     // padding: "8px 16px",
                     marginBottom: isMobile ? "1rem" : "0",
                     marginRight: isMobile ? "0" : "2rem",
-                    width: isMobile ? "100%" : "auto",
+                    width: isMobile ? "50%" : "auto",
                     transition: "background-color 0.3s, transform 0.2s",
                   }}
                   onMouseOver={(e) => {
@@ -106,13 +107,13 @@ function NavBar() {
 
         {isMobile && opened && (
           <div
+            className="justify-start items-start"
             style={{
               display: "flex",
               flexDirection: "column",
               gap: "1rem",
               marginTop: "1rem",
               textAlign: "center",
-              padding: "1px",
             }}
           >
             <NavLinkss isMobile={isMobile} />
@@ -123,9 +124,7 @@ function NavBar() {
                   color: "#fff",
                   borderRadius: "12px",
                   border: "2px solid #FCEED5",
-                  // padding: "8px 16px",
                   marginBottom: isMobile ? "1rem" : "0",
-                  marginRight: isMobile ? "0" : "2rem",
                   width: isMobile ? "100%" : "auto",
                   transition: "background-color 0.3s, transform 0.2s",
                 }}
