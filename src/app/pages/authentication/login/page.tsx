@@ -13,27 +13,34 @@ import {
 import { useDisclosure } from "@mantine/hooks";
 import Link from "next/link";
 import { signIn } from "next-auth/react";
-import { toast } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 function LoginPage() {
   const router = useRouter();
   const [visible, { toggle }] = useDisclosure(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   async function handFormSubmit(ev: { preventDefault: () => void }) {
     ev.preventDefault();
-
-    const result = await signIn("credentials", {
-      email,
-      password,
-      // callbackUrl: "/",
-      redirect: false,
-    });
-    if (result?.error) {
-      toast.error(result.error || "Login Failed");
-    } else {
-      toast.success("Login Successful!");
-      router.push("/pages/patients/");
+    try {
+      setIsLoading(true);
+      const result = await signIn("credentials", {
+        email,
+        password,
+        // callbackUrl: "/",
+        redirect: false,
+      });
+      if (result?.error) {
+        toast.error(result.error || "Login Failed");
+      } else {
+        toast.success("Login Successful!");
+        router.push("/pages/patients/");
+      }
+      setIsLoading(false);
+    } catch (error) {
+      toast.error("An error occurred during registration");
     }
   }
   // const form = useForm({
@@ -85,7 +92,7 @@ function LoginPage() {
             {...form.getInputProps("termsOfService", { type: "checkbox" })}
           /> */}
           <div className="mt-5 mb-2">
-            <button type="submit">Login</button>
+            <button type="submit">{isLoading ? "Loading" : "Login"}</button>
           </div>
 
           <div className="my-4 text-center text-gray-400">
@@ -121,6 +128,14 @@ function LoginPage() {
           </div>
         </form>
       </div>
+      <ToastContainer
+        autoClose={3000}
+        position="top-center"
+        closeOnClick={true}
+        hideProgressBar={false}
+        newestOnTop={true}
+        theme="colored"
+      />
     </div>
   );
 }

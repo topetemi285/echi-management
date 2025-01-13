@@ -13,6 +13,7 @@ interface PatientData {
 }
 
 interface PatientFormProps {
+  isloading?: boolean;
   onSubmit: (
     event: React.FormEvent<HTMLFormElement>,
     data: PatientData
@@ -20,7 +21,7 @@ interface PatientFormProps {
   patient?: PatientData | null;
 }
 
-const PatientForm: React.FC<PatientFormProps> = ({ onSubmit, patient }) => {
+const PatientForm: React.FC<PatientFormProps> = ({ onSubmit, patient, isloading }) => {
   const [name, setName] = useState(patient?.name || "");
   const [email, setEmail] = useState(patient?.email || "");
   const [date, setDate] = useState(patient?.date || "");
@@ -140,7 +141,7 @@ const PatientForm: React.FC<PatientFormProps> = ({ onSubmit, patient }) => {
         </div>
       </div>
 
-      <button type="submit">Save</button>
+      <button type="submit">{isloading ? "Loading" :"Save"}</button>
     </form>
   );
 };

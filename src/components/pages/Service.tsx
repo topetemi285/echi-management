@@ -20,8 +20,8 @@ function ServicePage() {
       <Paper
         style={{
           // backgroundColor: "grey-900",
-          paddingRight: "4rem",
-          paddingLeft: "3rem",
+          paddingRight: "1rem",
+          paddingLeft: "2rem",
         }}
       >
         <Flex
@@ -36,7 +36,7 @@ function ServicePage() {
             style={{
               fontSize: isMobile ? "2rem" : "2.5rem",
               fontWeight: "bold",
-              paddingLeft: isMobile ? "3rem" : "6rem",
+              paddingLeft: isMobile ? "1rem" : "2rem",
             }}
           >
             We Offer Different Services To Improve Your Health
@@ -222,7 +222,7 @@ function ServicePage() {
               //   color: "#1b065d",
               fontSize: isMobile ? "2rem" : "2.5rem",
               fontWeight: "bold",
-              paddingLeft: isMobile ? "5rem" : "10rem",
+              paddingLeft: isMobile ? "1rem" : "2rem",
             }}
           >
             Keep up with Our Most Recent Medical News

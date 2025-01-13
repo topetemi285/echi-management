@@ -1,17 +1,8 @@
 "use client";
-import {
-  Box,
-  Container,
-  Group,
-  Paper,
-  Burger,
-  Button,
-  //   Menu,
-} from "@mantine/core";
+import { Box, Container, Group, Paper, Burger, Button } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
 import React from "react";
 import { useState } from "react";
-// import { IconChevronDown } from "@tabler/icons-react";
 import NavLinkss from "./NavLink";
 import Image from "next/image";
 import Link from "next/link";
@@ -21,8 +12,6 @@ function NavBar() {
   const isMobile = useMediaQuery("(max-width: 768px)");
   return (
     <Paper
-      // shadow="xs"
-      //   p="xl"
       style={{
         padding: "5px",
         backgroundColor: "#FFFF",

@@ -13,11 +13,19 @@ interface PatientData {
 }
 
 interface MedicalFormProps {
-  onSubmit: (event: React.FormEvent<HTMLFormElement>, data: PatientData) => void;
+  onSubmit: (
+    event: React.FormEvent<HTMLFormElement>,
+    data: PatientData
+  ) => void;
   patient?: PatientData | null;
+  isLoading: boolean;
 }
 
-const MedicalForm: React.FC<MedicalFormProps> = ({ onSubmit, patient }) => {
+const MedicalForm: React.FC<MedicalFormProps> = ({
+  onSubmit,
+  patient,
+  isLoading,
+}) => {
   const [doctorName, setDoctorName] = useState(patient?.doctorName || "");
   const [email, setEmail] = useState(patient?.email || "");
   const [report, setReport] = useState(patient?.report || "");
@@ -111,9 +119,9 @@ const MedicalForm: React.FC<MedicalFormProps> = ({ onSubmit, patient }) => {
 
       <hr className="custom-hr" />
 
-      <button type="submit">Save</button>
+      <button type="submit">{isLoading ? "Loading" : "Save"}</button>
     </form>
   );
-}
+};
 
 export default MedicalForm;

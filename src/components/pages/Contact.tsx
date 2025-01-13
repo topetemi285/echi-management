@@ -30,9 +30,8 @@ function ContactPage() {
     <section id="contact">
       <Paper
         style={{
-          margin: "3rem",
-          paddingRight: "4rem",
-          paddingLeft: "3rem",
+          paddingRight: "1rem",
+          paddingLeft: "1rem",
         }}
       >
         <Title
@@ -41,7 +40,7 @@ function ContactPage() {
             //   color: "#1b065d",
             fontSize: isMobile ? "2rem" : "2.5rem",
             fontWeight: "bold",
-            paddingLeft: isMobile ? "3rem" : "10rem",
+            paddingLeft: isMobile ? "0rem" : "2rem",
           }}
         >
           We Are Always Ready to Help You.

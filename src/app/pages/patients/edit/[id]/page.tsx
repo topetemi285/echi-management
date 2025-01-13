@@ -5,7 +5,8 @@ import { Title } from "@mantine/core";
 import { useParams } from "next/navigation";
 import Link from "next/link";
 import MedicalForm from "@/components/layout/MedicalForm";
-
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 interface PatientData {
   _id?: string;
   name?: string;
@@ -16,6 +17,8 @@ interface PatientData {
   labTechName?: string;
 }
 function EditPatientPage() {
+  const [isLoading, setIsLoading] = useState(false);
+
   const { id } = useParams();
 
   const patientId = Array.isArray(id) ? id[0] : id;
@@ -28,7 +31,7 @@ function EditPatientPage() {
     fetch("/api/patientInfo").then((res) =>
       res.json().then((patients) => {
         const patient = patients.find(
-          (i: { _id: string}) => i._id === patientId
+          (i: { _id: string }) => i._id === patientId
         );
         setPatientInformation(patient || null);
       })
@@ -40,20 +43,24 @@ function EditPatientPage() {
     data: PatientData
   ) {
     ev.preventDefault();
-
-    data = { ...data, _id: patientId};
-
-    const res = await fetch("/api/patientInfo", {
-      method: "PUT",
-      body: JSON.stringify(data),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-    if (res.ok) {
-      return console.log("[SUCCESSFUL]");
-    } else {
-      console.log("[ERROR");
+    try {
+      data = { ...data, _id: patientId };
+      setIsLoading(true);
+      const res = await fetch("/api/patientInfo", {
+        method: "PUT",
+        body: JSON.stringify(data),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      if (res.ok) {
+        toast.success("Medical Report Successfully Saved");
+      } else {
+        toast.error("Medical Report Failed to save");
+      }
+      setIsLoading(false);
+    } catch (error) {
+      toast.error("An error occurred during saving medical report");
     }
   }
 
@@ -69,6 +76,7 @@ function EditPatientPage() {
           <MedicalForm
             onSubmit={handleFormSubmit}
             patient={patientInformation}
+            isLoading={isLoading}
           />
         </div>
       </div>

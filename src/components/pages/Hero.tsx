@@ -25,7 +25,7 @@ function HeroPage() {
       withIndicators
       height={500}
       plugins={[autoplay.current]}
-      onMouseEnter={() => autoplay.current.stop()} // Correct event handling
+      onMouseEnter={() => autoplay.current.stop()}
       onMouseLeave={() => autoplay.current.reset()}
       withControls={false}
     >
@@ -71,7 +71,7 @@ function HeroPage() {
               <Text
                 style={{
                   fontSize: isMobile ? "18px" : "20px",
-                  fontWeight: "bold",
+                  fontWeight: "normal",
                 }}
               >
                 ECHI in an effort to provoide affordable and accessible health
@@ -81,9 +81,6 @@ function HeroPage() {
               </Text>
 
               <Button
-                // rightSection={
-                //   <IconPlayCard size="2rem" stroke={1.5} color="#ffff" />
-                // }
                 style={{
                   backgroundColor: "#1591ea",
                   color: "#fff",
@@ -115,8 +112,6 @@ function HeroPage() {
       <Carousel.Slide>
         <Paper
           style={{
-            // paddingRight: "4rem",
-            // paddingLeft: "3rem",
             padding: "1rem",
             marginBottom: "3rem",
             backgroundImage: isMobile ? "url('Doctors.jpeg')" : "none",
@@ -156,14 +151,12 @@ function HeroPage() {
               <Text
                 style={{
                   fontSize: isMobile ? "18px" : "20px",
-                  fontWeight: "bold",
+                  fontWeight: "normal",
                 }}
               >
                 We are dedicated to transforming underprivileged communities by
                 ensuring access to essential healthcare and fostering
-                collaborative support networks. Our mission is to bridge
-                healthcare gaps by delivering impactful, sustainable solutions
-                that improve quality of life.
+                collaborative support networks. 
               </Text>
 
               <Button
@@ -242,7 +235,7 @@ function HeroPage() {
               <Text
                 style={{
                   fontSize: isMobile ? "18px" : "20px",
-                  fontWeight: "bold",
+                  fontWeight: "normal",
                 }}
               >
                 We are dedicated to transforming underprivileged communities by

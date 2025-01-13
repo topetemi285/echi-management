@@ -1,10 +1,11 @@
 "use client";
 import { Title } from "@mantine/core";
-import { resolve } from "path";
-import { toast } from "react-hot-toast";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import PatientForm from "@/components/layout/PatientForm";
 import { useSession } from "next-auth/react";
 import { redirect } from "next/navigation";
+import { useState } from "react";
 
 interface PatientData {
   name?: string;
@@ -17,7 +18,7 @@ interface PatientData {
 }
 function NewPatient() {
   const session = useSession();
-
+  const [isLoading, setIsLoading] = useState(false);
   const { status } = session;
 
   async function handlePatientInfo(
@@ -25,9 +26,9 @@ function NewPatient() {
     data: PatientData // Change the type to `PatientData`
   ) {
     ev.preventDefault();
-
-    if (status === "authenticated") {
-      const patientToast = new Promise(async (reslove, reject) => {
+    try {
+      setIsLoading(true);
+      if (status === "authenticated") {
         const res = await fetch("/api/patientInfo", {
           method: "POST",
           headers: {
@@ -36,23 +37,24 @@ function NewPatient() {
           body: JSON.stringify(data),
         });
 
-        if (res.ok) resolve();
-        else reject();
-      });
+        if (res.ok) {
+          toast.success("Patient Info Saved!");
+        } else {
+          toast.error("Failed to Save PatienT Info");
+        }
 
-      await toast.promise(patientToast, {
-        loading: "Loading",
-        success: "Patient Information Saved!",
-        error: "Oooop!, an error occur",
-      });
-    }
+        setIsLoading(false);
+      }
 
-    if (status === "loading") {
-      return "LOADING";
-    }
+      if (status === "loading") {
+        return "LOADING";
+      }
 
-    if (status === "unauthenticated") {
-      return redirect("/");
+      if (status === "unauthenticated") {
+        return redirect("/");
+      }
+    } catch (error) {
+      toast.error("An error occurred during registration a patient");
     }
   }
 
@@ -62,8 +64,20 @@ function NewPatient() {
         <Title>PATIENT PERSONAL INFORMATION</Title>
 
         <div>
-          <PatientForm onSubmit={handlePatientInfo} patient={null} />
+          <PatientForm
+            onSubmit={handlePatientInfo}
+            patient={null}
+            isloading={isLoading}
+          />
         </div>
+        <ToastContainer
+          autoClose={3000}
+          position="top-center"
+          closeOnClick={true}
+          hideProgressBar={false}
+          newestOnTop={true}
+          theme="colored"
+        />
       </div>
     </div>
   );

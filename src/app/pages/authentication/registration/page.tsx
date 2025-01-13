@@ -8,7 +8,6 @@ import {
   Image,
   Text,
 } from "@mantine/core";
-// import { useForm } from "@mantine/form";
 import { useDisclosure } from "@mantine/hooks";
 import Link from "next/link";
 import { signIn } from "next-auth/react";
@@ -18,26 +17,27 @@ function RegistrationPage() {
   const [visible, { toggle }] = useDisclosure(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  // const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (ev: { preventDefault: () => void }) => {
     ev.preventDefault();
 
-    // try {
-    const res = await fetch("/api/registration", {
-      method: "POST",
-      body: JSON.stringify({ email, password }),
-      headers: { "Content-Type": "application/json" },
-    });
-    if (res.ok) {
-      toast.success("Registration Successfully");
-    } else {
-      toast.error("Registration Failed");
+    try {
+      setLoading(true);
+      const res = await fetch("/api/registration", {
+        method: "POST",
+        body: JSON.stringify({ email, password }),
+        headers: { "Content-Type": "application/json" },
+      });
+      if (res.ok) {
+        toast.success("Registration Successfully");
+      } else {
+        toast.error("Registration Failed");
+      }
+      setLoading(false);
+    } catch (error) {
+      toast.error("An error occurred during registration");
     }
-    //}
-    // catch (error) {
-    //   toast.error("An error occurred during registration");
-    // }
   };
 
   return (
@@ -71,7 +71,7 @@ function RegistrationPage() {
           </div>
 
           <div className="mt-3 mb-5">
-            <button type="submit">SignUp</button>
+            <button type="submit">{loading ? "Loading" : "SignUp"}</button>
           </div>
 
           <div className="my-4 text-center text-gray-400">
