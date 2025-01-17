@@ -44,7 +44,7 @@ function HeroPage() {
         >
           {isMobile && (
             <Overlay
-              opacity={0.3}
+              opacity={1}
               color="#000"
               zIndex={1}
               style={{
@@ -78,7 +78,7 @@ function HeroPage() {
               <Title
                 order={2}
                 style={{
-                  color: "#1591ea",
+                  color: isMobile ? "white" : "#1591ea",
                   fontSize: isMobile ? "2rem" : "3rem",
                   fontWeight: "bolder",
                   marginTop: isMobile ? "120px" : "50px",
@@ -89,6 +89,7 @@ function HeroPage() {
 
               <Text
                 style={{
+                  color: isMobile ? "white" : "black",
                   fontSize: isMobile ? "18px" : "20px",
                   fontWeight: "normal",
                 }}
@@ -127,7 +128,7 @@ function HeroPage() {
                 src="Doctors.jpeg"
                 alt="doctor"
                 fit="cover"
-                style={{ opacity: 1.5 }}
+                // style={{ opacity: 1.5 }}
               />
             </div>
           </div>
@@ -227,7 +228,7 @@ function HeroPage() {
         >
           {isMobile && (
             <Overlay
-              opacity={0.3}
+              opacity={1}
               color="#000"
               zIndex={1}
               style={{
@@ -261,7 +262,7 @@ function HeroPage() {
               <Title
                 order={2}
                 style={{
-                  color: "#1591ea",
+                  color: isMobile ? "white" : "#1591ea",
                   fontSize: isMobile ? "2rem" : "3rem",
                   fontWeight: "bolder",
                   marginTop: isMobile ? "120px" : "50px",
@@ -272,6 +273,7 @@ function HeroPage() {
 
               <Text
                 style={{
+                  color: isMobile ? "white" : "black",
                   fontSize: isMobile ? "18px" : "20px",
                   fontWeight: "normal",
                 }}
@@ -310,7 +312,7 @@ function HeroPage() {
                 src="Doctors.jpeg"
                 alt="doctor"
                 fit="cover"
-                style={{ opacity: 1.5 }}
+                // style={{ opacity: 1.5 }}
               />
             </div>
           </div>
@@ -414,7 +416,7 @@ function HeroPage() {
         >
           {isMobile && (
             <Overlay
-              opacity={0.3}
+              opacity={1}
               color="#000"
               zIndex={1}
               style={{
@@ -448,7 +450,7 @@ function HeroPage() {
               <Title
                 order={2}
                 style={{
-                  color: "#1591ea",
+                  color: isMobile ? "white" : "#1591ea",
                   fontSize: isMobile ? "2rem" : "3rem",
                   fontWeight: "bolder",
                   marginTop: isMobile ? "120px" : "50px",
@@ -459,6 +461,7 @@ function HeroPage() {
 
               <Text
                 style={{
+                  color: isMobile ? "white" : "black",
                   fontSize: isMobile ? "18px" : "20px",
                   fontWeight: "normal",
                 }}
@@ -497,7 +500,7 @@ function HeroPage() {
                 src="Doctors.jpeg"
                 alt="doctor"
                 fit="cover"
-                style={{ opacity: 1.5 }}
+                // style={{ opacity: 1.5 }}
               />
             </div>
           </div>
