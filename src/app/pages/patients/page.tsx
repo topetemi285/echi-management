@@ -34,7 +34,7 @@ function AllPatientPage() {
       <Title className="text-center">ALL PATIENTS RECORDS</Title>
 
       {patient?.length > 0 &&
-        patient.map((pat:any, index) => (
+        patient.map((pat: any, index) => (
           <div
             key={pat?._id}
             className="m-5 p-4 gap-4 md:grid md:grid-cols-4 md:items-start md:justify-start border"
@@ -44,7 +44,7 @@ function AllPatientPage() {
             <div>{pat?.email}</div>
             <div className="flex justify-center items-center gap-6">
               <div className="text-blue-500">
-                <Link href={"/"}>View</Link>
+                <Link href={"/pages/medical_report/" + 1}>View</Link>
               </div>
               <div className="text-green-800">
                 <Link href={"/pages/patients/edit/" + pat._id}>Edit</Link>

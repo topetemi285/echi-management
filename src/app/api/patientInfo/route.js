@@ -56,7 +56,7 @@ export async function PUT(req) {
     const updatePatient = await PatientInfo.findByIdAndUpdate(
       _id,
       { $push: { medicalReports: medicalReports._id } },
-      { new: true } // Return the updated document
+      { new: true }
     ).populate("medicalReports");
 
     if (!updatePatient) {
