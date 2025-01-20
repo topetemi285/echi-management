@@ -4,20 +4,15 @@ import { useMediaQuery } from "@mantine/hooks";
 import React from "react";
 import { ABOUTDETAILS, FEATURES } from "@/constants";
 import CountUp from "react-countup";
-// import { IconHome } from "@tabler/icons-react";
-// import {
-//   IconMap,
-//   IconBuilding,
-//   IconGlobe,
-//   IconPin,
-//   IconCity,
-// } from "@tabler/icons-react";
+
+import "@mantine/carousel/styles.css";
 
 function AboutPage() {
   const isMobile = useMediaQuery("(max-width: 768px)");
+
   return (
     <section id="about">
-      <Paper shadow="xs" p="xl">
+      <Paper shadow="xs" p="xl" className="items-center justify-center">
         <SimpleGrid cols={isMobile ? 1 : 3}>
           {FEATURES.map((feature) => (
             <Card
@@ -32,12 +27,12 @@ function AboutPage() {
               onMouseEnter={(e) => {
                 e.currentTarget.style.transform = "scale(1.05)";
                 e.currentTarget.style.boxShadow =
-                  "0 4px 15px rgba(0, 0, 0, 0.3)"; // Enhanced shadow
+                  "0 4px 15px rgba(0, 0, 0, 0.3)";
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.transform = "scale(1)";
                 e.currentTarget.style.boxShadow =
-                  "0 2px 8px rgba(0, 0, 0, 0.1)"; // Back to default shadow
+                  "0 2px 8px rgba(0, 0, 0, 0.1)";
               }}
             >
               <div className="mb-4">

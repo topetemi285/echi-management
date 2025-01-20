@@ -6,6 +6,7 @@ import {
   TextInput,
   Title,
   Image,
+  Space,
 } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
 import { useForm } from "@mantine/form";
@@ -40,7 +41,8 @@ function ContactPage() {
             //   color: "#1b065d",
             fontSize: isMobile ? "2rem" : "2.5rem",
             fontWeight: "bold",
-            paddingLeft: isMobile ? "0rem" : "2rem",
+            paddingLeft: isMobile ? "1rem" : "2rem",
+            textAlign: isMobile ? "start" : "center",
           }}
         >
           We Are Always Ready to Help You.
@@ -58,7 +60,7 @@ function ContactPage() {
               key={form.key("name")}
               {...form.getInputProps("name")}
             />
-
+            <Space h="lg" />
             <TextInput
               size="lg"
               label="Email"
@@ -66,6 +68,7 @@ function ContactPage() {
               key={form.key("email")}
               {...form.getInputProps("email")}
             />
+            <Space h="kg" />
             <Textarea
               size="xl"
               label="Comment"
@@ -75,7 +78,7 @@ function ContactPage() {
               key={form.key("comment")}
               {...form.getInputProps("comment")}
             />
-
+            <Space h="lg" />
             <Group justify="flex-end" mt="md">
               <Button type="submit">Submit</Button>
             </Group>

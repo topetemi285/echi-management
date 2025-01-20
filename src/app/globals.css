@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.container {
+  overflow-x: hidden;
+}
+
 label {
   @apply text-gray-500 text-sm leading-tight;
 }
@@ -26,4 +30,3 @@ button[type="submit"] {
 .custom-hr {
   @apply relative border-0 h-1 bg-gradient-to-r from-blue-500 to-green-500 my-6 before:absolute before:top-0 before:left-1/2 before:transform before:-translate-x-1/2 before:h-1 before:w-10 before:bg-white;
 }
-

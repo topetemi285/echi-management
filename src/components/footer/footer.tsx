@@ -12,13 +12,13 @@ export default function Footer() {
   return (
     <footer className="bg-blue-500 text-slate-200 text-sm mt-16">
       <Container>
-        <div className="flex md: flex-row justify-between pt-16 pb-8">
+        <div className="flex flex-col lg:flex-row justify-between pt-16 pb-8">
           <FooterList>
             <h3 className="font-bold text-lg mb-3 ">Quick Links</h3>
             <Link href="/">Home</Link>
-            <Link href="/about">About Us</Link>
-            <Link href="/menu">Service</Link>
-            <Link href="/contact">Contact Us</Link>
+            <Link href="/">About Us</Link>
+            <Link href="/">Service</Link>
+            <Link href="/">Contact Us</Link>
           </FooterList>
 
           <div className="w-full md: md: mb-0">

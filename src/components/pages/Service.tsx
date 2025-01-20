@@ -36,6 +36,7 @@ function ServicePage() {
             style={{
               fontSize: isMobile ? "2rem" : "2.5rem",
               fontWeight: "bold",
+              textAlign: isMobile ? "start" : "center",
               paddingLeft: isMobile ? "1rem" : "2rem",
             }}
           >
@@ -55,10 +56,10 @@ function ServicePage() {
             <Text
               style={{
                 color: "#A9A9A9",
-                marginTop: "1rem",
+                marginTop: "0.5rem",
                 fontSize: "16px",
                 fontWeight: isMobile ? "bold" : "bolder",
-                paddingLeft: isMobile ? "3rem" : "0.5rem",
+                paddingLeft: isMobile ? "1rem" : "2rem",
               }}
             >
               ECHI in an effort to provoide affordable and accessible health
@@ -77,6 +78,7 @@ function ServicePage() {
             style={{
               fontSize: "1.5rem",
               fontWeight: "bold",
+              paddingLeft: isMobile ? "1rem" : "2rem",
             }}
           >
             Who We Are
@@ -86,8 +88,8 @@ function ServicePage() {
             <div>
               <p
                 style={{
-                  paddingLeft: isMobile ? "5rem" : "0rem",
-                  paddingRight: isMobile ? "5rem" : "0rem",
+                  paddingLeft: "1rem",
+                  paddingRight: "1rem",
                 }}
               >
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -99,7 +101,7 @@ function ServicePage() {
               <div className="mt-5 flex items-start justify-start gap-1 ">
                 <ul
                   style={{
-                    paddingLeft: isMobile ? "5rem" : "0rem",
+                    paddingLeft: "1rem",
                   }}
                 >
                   <Text>Maecenas vitae luctus nibh.</Text>
@@ -146,7 +148,8 @@ function ServicePage() {
               //   color: "#1b065d",
               fontSize: isMobile ? "2rem" : "2.5rem",
               fontWeight: "bold",
-              paddingLeft: isMobile ? "1rem" : "10rem",
+              paddingLeft: "1rem",
+              textAlign: isMobile ? "start" : "center",
             }}
           >
             We Offer Different Services To Improve Your Health
@@ -176,7 +179,7 @@ function ServicePage() {
             </Text>
           </div>
 
-          <div className="mx-2 grid grid-cols-1 items-start justify-start gap-8 md:grid-cols-2 lg:grid-cols-3 ">
+          <div className="mx-1 grid grid-cols-1 items-start justify-start gap-8 md:grid-cols-2 lg:grid-cols-3 ">
             {SERVICES.map((service) => (
               <div
                 key={service.id}
@@ -222,7 +225,8 @@ function ServicePage() {
               //   color: "#1b065d",
               fontSize: isMobile ? "2rem" : "2.5rem",
               fontWeight: "bold",
-              paddingLeft: isMobile ? "1rem" : "2rem",
+              paddingLeft: "1rem",
+              textAlign: isMobile ? "start" : "center",
             }}
           >
             Keep up with Our Most Recent Medical News

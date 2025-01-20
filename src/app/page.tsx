@@ -8,13 +8,13 @@ import ContactPage from "@/components/pages/Contact";
 
 export default function Home() {
   return (
-    <>
+    <div className="container">
       <NavBar />
       <HeroPage />
       <AboutPage />
       <ServicePage />
       <ContactPage />
       <Footer />
-    </>
+    </div>
   );
 }
