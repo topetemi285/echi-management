@@ -128,7 +128,7 @@ function HeroPage() {
                 src="Doctors.jpeg"
                 alt="doctor"
                 fit="cover"
-                // style={{ opacity: 1.5 }}
+                
               />
             </div>
           </div>
