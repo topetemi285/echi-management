@@ -55,6 +55,7 @@ function Gallery() {
             src="/echibuild.jpg"
             alt="image3"
           />
+          
           <Image
             radius="md"
             h={200}
