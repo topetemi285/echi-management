@@ -10,7 +10,7 @@ import {
 } from "react-icons/ai";
 export default function Footer() {
   return (
-    <footer className="bg-blue-500 text-slate-200 text-sm mt-16">
+    <footer className="bg-blue-500 text-slate-200 text-sm mt-10 ml-10">
       <Container>
         <div className="flex flex-col lg:flex-row justify-between pt-16 pb-8">
           <FooterList>
